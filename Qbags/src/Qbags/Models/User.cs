@@ -12,6 +12,5 @@ namespace Qbags.Models
         public string Password { get; set; }
         public string Permission { get; set; }
         public ICollection<Order> Orders { get; set; }
-        public Cart Cart { get; set; }
     }
 }

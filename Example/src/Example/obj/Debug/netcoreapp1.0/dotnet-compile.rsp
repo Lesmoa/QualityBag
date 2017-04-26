@@ -236,10 +236,14 @@ C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Controllers\Acco
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Controllers\HomeController.cs
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Controllers\ManageController.cs
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Data\ApplicationDbContext.cs
+C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Data\SchoolContext.cs
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Data\Migrations\00000000000000_CreateIdentitySchema.cs
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Data\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Models\ApplicationUser.cs
+C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Models\Course.cs
+C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Models\Enrollment.cs
+C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Models\Student.cs
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Models\AccountViewModels\ForgotPasswordViewModel.cs
 C:\Users\SAMSUNG\Desktop\ASP_NET - ChenChen\Example\src\Example\Models\AccountViewModels\LoginViewModel.cs

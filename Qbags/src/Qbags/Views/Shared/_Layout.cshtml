@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="~/css/site.css" />
         <link rel="stylesheet" href="~/css/navcss.css" />
     </environment>
+
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
@@ -18,6 +19,7 @@
     </environment>
     @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
 </head>
+
 <body>
     <header>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -47,7 +49,6 @@
                                     <li><a asp-area="" asp-controller="Sales" asp-action="About">Sales</a></li>
                                     <li><a asp-area="" asp-controller="Categories" asp-action="Index">Categories</a></li>
                                     <li><a asp-area="" asp-controller="Bags" asp-action="Index">Bags</a></li>
-                                    <li><a asp-area="" asp-controller="Cart" asp-action="Index">Cart</a></li>
                                 </ul>
                                 @await Html.PartialAsync("_LoginPartial")
                             </div>
