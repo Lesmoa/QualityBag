@@ -8,8 +8,18 @@
 {
     <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
-            <li>
+            <li class="dropdown">
                 <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                <ul class="dropdown-menu">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li><a asp-area="" asp-controller="AdminApplicationUsers" asp-action="Index">Account</a></li>
+                        <li><a asp-area="" asp-controller="Products" asp-action="Index">Product</a></li>
+                        <li><a asp-area="" asp-controller="Suppliers" asp-action="Index">Supplier</a></li>
+                        <li><a asp-area="" asp-controller="Categories" asp-action="Index">Category</a></li>
+                    }
+                    <li><a href="#">Order</a></li>
+                </ul>
             </li>
             <li>
                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>

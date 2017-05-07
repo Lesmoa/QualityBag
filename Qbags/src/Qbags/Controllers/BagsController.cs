@@ -22,7 +22,8 @@ namespace Qbags.Controllers
         // GET: Bags
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Bags.ToListAsync());
+            var bagContext = _context.Bags.Include(b => b.Category).Include(b => b.supplier);
+            return View(await bagContext.ToListAsync());
         }
 
         // GET: Bags/Details/5
@@ -45,6 +46,8 @@ namespace Qbags.Controllers
         // GET: Bags/Create
         public IActionResult Create()
         {
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "ID");
+            ViewData["SupplierID"] = new SelectList(_context.Suppliers, "ID", "ID");
             return View();
         }
 
@@ -53,7 +56,7 @@ namespace Qbags.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,BagName,Brand,Color,Discount,Price,Quantity,Size")] Bag bag)
+        public async Task<IActionResult> Create([Bind("ID,BagName,Brand,CategoryID,Color,Description,Discount,ImageURL,Price,Quantity,SupplierID")] Bag bag)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +64,8 @@ namespace Qbags.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "ID", bag.CategoryID);
+            ViewData["SupplierID"] = new SelectList(_context.Suppliers, "ID", "ID", bag.SupplierID);
             return View(bag);
         }
 
@@ -77,6 +82,8 @@ namespace Qbags.Controllers
             {
                 return NotFound();
             }
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "ID", bag.CategoryID);
+            ViewData["SupplierID"] = new SelectList(_context.Suppliers, "ID", "ID", bag.SupplierID);
             return View(bag);
         }
 
@@ -85,7 +92,7 @@ namespace Qbags.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,BagName,Brand,Color,Discount,Price,Quantity,Size")] Bag bag)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,BagName,Brand,CategoryID,Color,Description,Discount,ImageURL,Price,Quantity,SupplierID")] Bag bag)
         {
             if (id != bag.ID)
             {
@@ -112,6 +119,8 @@ namespace Qbags.Controllers
                 }
                 return RedirectToAction("Index");
             }
+            ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "ID", bag.CategoryID);
+            ViewData["SupplierID"] = new SelectList(_context.Suppliers, "ID", "ID", bag.SupplierID);
             return View(bag);
         }
 
