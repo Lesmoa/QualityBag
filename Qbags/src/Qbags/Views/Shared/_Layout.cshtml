@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -37,6 +40,15 @@
                 <li class="navItem"><a asp-area="" asp-controller="Sales" asp-action="About">Sales</a></li>
                 <li class="navItem"><a asp-area="" asp-controller="Home" asp-action="About">About Us</a></li>
                 <li class="navItem"><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                @if (!User.IsInRole("Admin"))
+                {
+                    <li class="navItem"><a asp-area="" asp-controller="Orders" asp-action="Index">My Cart</a></li>
+                }
+                @if (User.IsInRole("Admin"))
+                {
+                    <li class="navItem"><a asp-area="" asp-controller="Orders" asp-action="Index">Customer Orders</a></li>
+                }
+
             </ul>
             @await Html.PartialAsync("_LoginPartial")
         </div>

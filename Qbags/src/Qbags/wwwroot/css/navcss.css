@@ -71,6 +71,13 @@ body {
   background:#CFCF13;
 }
 
+.navItem:nth-of-type(7) {
+  border-bottom:2px solid #fb9eb1;
+}
+.navItem:nth-of-type(7) a:hover {
+  background:#fb9eb1;
+}
+
 li.dropdown:hover > .dropdown-menu {
     display: block;
 }

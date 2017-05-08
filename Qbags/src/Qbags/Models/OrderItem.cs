@@ -12,6 +12,6 @@ namespace Qbags.Models
         public int BagID { get; set; }
         public int Quantity { get; set; }
         public Order Order { get; set; }
-        public Bag Bags { get; set; }
+        public Bag Bag { get; set; }
     }
 }
